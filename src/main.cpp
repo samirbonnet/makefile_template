@@ -1,8 +1,10 @@
-#include <iostream>
-#include "cpp_class.hpp"
+// #include <iostream>
 #include "c_functions.h"
+#include "cpp_class.hpp"
 
 int main() {
+
+#if 0
     std::cout << "Mixed C/C++ Project Demonstration" << std::endl;
 
     // Using C++ class
@@ -15,6 +17,6 @@ int main() {
     print_c_message("Hello from C!");
     int add_result = add_numbers(10, 20);
     std::cout << "C addition result: " << add_result << std::endl;
-
-    return 0;
+#endif
+  return 0;
 }

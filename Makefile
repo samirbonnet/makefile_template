@@ -38,7 +38,7 @@ RESET := \033[0m
 CC := gcc
 CXX := g++
 CFLAGS := -std=gnu17 -Wall -Wextra -pedantic
-CXXFLAGS := -std=c++23 -Wall -Wextra -pedantic
+CXXFLAGS := -std=gnu++20 -Wall -Wextra -pedantic
 INCLUDES := -Iinc
 LIBS :=
 

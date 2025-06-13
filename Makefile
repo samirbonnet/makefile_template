@@ -69,7 +69,7 @@ else
 endif
 
 # Phony targets
-.PHONY: all debug release clean run run_debug format lint help
+.PHONY: all debug release clean run run_debug format lint help ccdb
 
 # Default target
 all: release
@@ -122,10 +122,17 @@ format:
 	@echo "$(GREEN)Formatting complete$(RESET)"
 
 # Lint source files
-lint:
+lint: compile_commands.json
 	@echo "$(BLUE)Running static analysis$(RESET)"
 	@find $(SRC_DIR) -iname *.cpp -o -iname *.c | xargs clang-tidy -p compile_commands.json
 	@echo "$(GREEN)Static analysis complete$(RESET)"
+
+compile_commands.json:
+	@echo "$(BLUE)Generating compilation database$(RESET)"
+	@bear -- $(MAKE) -B $(TARGET) > /dev/null
+	@echo "$(GREEN)Compilation database created$(RESET)"
+
+ccdb: compile_commands.json
 
 # Help
 help:

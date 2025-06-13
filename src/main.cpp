@@ -1,10 +1,10 @@
-// #include <iostream>
+// Example mixed C and C++ executable
+#include <iostream>
 #include "c_functions.h"
 #include "cpp_class.hpp"
 
 int main() {
 
-#if 0
     std::cout << "Mixed C/C++ Project Demonstration" << std::endl;
 
     // Using C++ class
@@ -14,9 +14,9 @@ int main() {
     std::cout << "C++ multiplication result: " << mult_result << std::endl;
 
     // Using C functions
-    print_c_message("Hello from C!");
+    print_c_message("Hello from C!" );
     int add_result = add_numbers(10, 20);
     std::cout << "C addition result: " << add_result << std::endl;
-#endif
   return 0;
 }
+

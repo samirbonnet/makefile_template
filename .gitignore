@@ -1,5 +1,2 @@
-bin
-obj
-compile_commands.json
-.vscode
-.cache
+# Build artifacts
+/build/
